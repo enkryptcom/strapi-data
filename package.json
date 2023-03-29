@@ -1,19 +1,30 @@
 {
   "name": "strapi-data",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/enkryptcom/strapi-data.git"
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.9.0",
+    "@strapi/plugin-users-permissions": "4.9.0",
+    "@strapi/plugin-i18n": "4.9.0",
+    "better-sqlite3": "8.0.1"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/enkryptcom/strapi-data/issues"
+  "author": {
+    "name": "A Strapi developer"
   },
-  "homepage": "https://github.com/enkryptcom/strapi-data#readme"
+  "strapi": {
+    "uuid": "1678fbb1-40e1-475a-9275-ad9279d37ea7"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
