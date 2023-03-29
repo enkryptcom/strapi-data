@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enkrypt_networks",
+  "info": {
+    "singularName": "enkrypt-network",
+    "pluralName": "enkrypt-networks",
+    "displayName": "enkrypt-network",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "path": {
+      "type": "uid",
+      "required": true
+    },
+    "PageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
+    },
+    "pageDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "AboutEnkrypt": {
+      "type": "richtext",
+      "required": true
+    },
+    "WhatIsNetwork": {
+      "type": "richtext",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
