@@ -42,9 +42,7 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "aboutEnkryptTitle": {
       "type": "string",
@@ -54,6 +52,10 @@
     "networkInfoTitle": {
       "type": "string",
       "default": "What is [network Name]?",
+      "required": true
+    },
+    "mainTitle": {
+      "type": "string",
       "required": true
     }
   }
