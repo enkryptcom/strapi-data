@@ -45,6 +45,16 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "aboutEnkryptTitle": {
+      "type": "string",
+      "default": "About Enkrypt",
+      "required": true
+    },
+    "networkInfoTitle": {
+      "type": "string",
+      "default": "What is [network Name]?",
+      "required": true
     }
   }
 }
