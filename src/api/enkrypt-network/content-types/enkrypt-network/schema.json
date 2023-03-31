@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true,
@@ -22,7 +22,7 @@
       "type": "uid",
       "required": true
     },
-    "PageTitle": {
+    "pageTitle": {
       "type": "string",
       "required": true
     },
@@ -30,11 +30,11 @@
       "type": "richtext",
       "required": true
     },
-    "AboutEnkrypt": {
+    "aboutEnkrypt": {
       "type": "richtext",
       "required": true
     },
-    "WhatIsNetwork": {
+    "networkInfo": {
       "type": "richtext",
       "required": true
     },
