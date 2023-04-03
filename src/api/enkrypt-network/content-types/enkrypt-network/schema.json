@@ -24,11 +24,16 @@
     },
     "pageTitle": {
       "type": "string",
-      "required": true
+      "default": "Enkrypt: ",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 70
     },
     "pageDescription": {
-      "type": "richtext",
-      "required": true
+      "type": "text",
+      "required": true,
+      "minLength": 50,
+      "maxLength": 160
     },
     "aboutEnkrypt": {
       "type": "richtext",
