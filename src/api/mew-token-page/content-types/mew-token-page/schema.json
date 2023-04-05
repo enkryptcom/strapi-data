@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mew_token_pages",
+  "info": {
+    "singularName": "mew-token-page",
+    "pluralName": "mew-token-pages",
+    "displayName": "mew-token-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tokenName": {
+      "type": "string",
+      "required": true
+    },
+    "walletDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "isMewWallet": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isEnkrypt": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "whatIsToken": {
+      "type": "richtext",
+      "required": true
+    },
+    "coingeckoId": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
