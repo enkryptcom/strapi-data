@@ -4,7 +4,8 @@
   "info": {
     "singularName": "mew-token-page",
     "pluralName": "mew-token-pages",
-    "displayName": "mew-token-page"
+    "displayName": "mew-token-page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -38,11 +39,19 @@
       "required": true
     },
     "icon": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "htmlTitle": {
+      "type": "string",
+      "required": true
+    },
+    "htmlDescription": {
+      "type": "text",
       "required": true
     }
   }

@@ -13,11 +13,11 @@
   "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-color-picker": "^4.9.0",
-    "@strapi/plugin-i18n": "4.9.0",
-    "@strapi/plugin-users-permissions": "4.9.0",
-    "@strapi/strapi": "4.9.0",
+    "@strapi/plugin-i18n": "^4.9.0",
+    "@strapi/plugin-users-permissions": "^4.9.0",
+    "@strapi/strapi": "^4.9.0",
     "@studio123/strapi-plugin-image-color-palette": "^1.1.2",
-    "better-sqlite3": "8.0.1",
+    "better-sqlite3": "^8.0.1",
     "patch-package": "^6.5.1",
     "postinstall-postinstall": "^2.1.0"
   },
