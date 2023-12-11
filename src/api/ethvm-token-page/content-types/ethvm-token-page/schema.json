@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ethvm_token_pages",
+  "info": {
+    "singularName": "ethvm-token-page",
+    "pluralName": "ethvm-token-pages",
+    "displayName": "ethvm-token-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TokenBaseInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "token.token-info-shared"
+    },
+    "htmlTitle": {
+      "type": "string"
+    },
+    "htmlSubtitle": {
+      "type": "string"
+    },
+    "htmlDescription": {
+      "type": "text"
+    },
+    "tokenWebsite": {
+      "type": "string"
+    },
+    "ETHcontract": {
+      "type": "string"
+    },
+    "SocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "token.social-links"
+    }
+  }
+}

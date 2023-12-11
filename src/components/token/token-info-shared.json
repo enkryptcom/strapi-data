@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_token_token_info_shareds",
+  "info": {
+    "displayName": "TokenInfoShared"
+  },
+  "options": {},
+  "attributes": {
+    "tokenName": {
+      "type": "string"
+    },
+    "coingeckoId": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Symbol": {
+      "type": "string"
+    }
+  }
+}
