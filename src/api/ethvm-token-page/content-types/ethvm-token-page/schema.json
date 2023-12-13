@@ -17,13 +17,10 @@
       "repeatable": true,
       "component": "token.token-info-shared"
     },
-    "htmlTitle": {
+    "htmlMetaTitle": {
       "type": "string"
     },
-    "htmlSubtitle": {
-      "type": "string"
-    },
-    "htmlDescription": {
+    "htmlMetaDescription": {
       "type": "text"
     },
     "tokenWebsite": {
@@ -36,6 +33,15 @@
       "type": "component",
       "repeatable": true,
       "component": "token.social-links"
+    },
+    "WhatIsToken": {
+      "type": "string"
+    },
+    "AboutToken": {
+      "type": "string"
+    },
+    "TokenDescription": {
+      "type": "text"
     }
   }
 }
