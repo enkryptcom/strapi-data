@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ethvm_nft_pages",
+  "info": {
+    "singularName": "ethvm-nft-page",
+    "pluralName": "ethvm-nft-pages",
+    "displayName": "Ethvm-nft-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HTMLmeta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "html.htm-lmeta"
+    },
+    "SocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "token.social-links"
+    },
+    "NFTwebsite": {
+      "type": "string"
+    },
+    "WhatIsNFT": {
+      "type": "string"
+    },
+    "NFTDescription": {
+      "type": "text"
+    },
+    "ETHcontract": {
+      "type": "string"
+    },
+    "NFTName": {
+      "type": "string"
+    }
+  }
+}

@@ -17,12 +17,6 @@
       "repeatable": true,
       "component": "token.token-info-shared"
     },
-    "htmlMetaTitle": {
-      "type": "string"
-    },
-    "htmlMetaDescription": {
-      "type": "text"
-    },
     "tokenWebsite": {
       "type": "string"
     },
@@ -37,11 +31,13 @@
     "WhatIsToken": {
       "type": "string"
     },
-    "AboutToken": {
-      "type": "string"
-    },
     "TokenDescription": {
       "type": "text"
+    },
+    "HTMLmeta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "html.htm-lmeta"
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_html_htm_lmetas",
+  "info": {
+    "displayName": "HTMLmeta"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface HtmlHtmLmeta extends Schema.Component {
+  collectionName: 'components_html_htm_lmetas';
+  info: {
+    displayName: 'HTMLmeta';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface TokenSocialLinks extends Schema.Component {
   collectionName: 'components_token_social_links';
   info: {
@@ -34,6 +45,7 @@ export interface TokenTokenInfoShared extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'html.htm-lmeta': HtmlHtmLmeta;
       'token.social-links': TokenSocialLinks;
       'token.token-info-shared': TokenTokenInfoShared;
     }

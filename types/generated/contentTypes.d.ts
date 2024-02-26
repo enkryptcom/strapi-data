@@ -738,6 +738,43 @@ export interface ApiEnkryptNetworkEnkryptNetwork extends Schema.CollectionType {
   };
 }
 
+export interface ApiEthvmNftPageEthvmNftPage extends Schema.CollectionType {
+  collectionName: 'ethvm_nft_pages';
+  info: {
+    singularName: 'ethvm-nft-page';
+    pluralName: 'ethvm-nft-pages';
+    displayName: 'Ethvm-nft-page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HTMLmeta: Attribute.Component<'html.htm-lmeta', true>;
+    SocialLinks: Attribute.Component<'token.social-links', true>;
+    NFTwebsite: Attribute.String;
+    WhatIsNFT: Attribute.String;
+    NFTDescription: Attribute.Text;
+    ETHcontract: Attribute.String;
+    NFTName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ethvm-nft-page.ethvm-nft-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ethvm-nft-page.ethvm-nft-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEthvmTokenPageEthvmTokenPage extends Schema.CollectionType {
   collectionName: 'ethvm_token_pages';
   info: {
@@ -751,14 +788,12 @@ export interface ApiEthvmTokenPageEthvmTokenPage extends Schema.CollectionType {
   };
   attributes: {
     TokenBaseInfo: Attribute.Component<'token.token-info-shared', true>;
-    htmlMetaTitle: Attribute.String;
-    htmlMetaDescription: Attribute.Text;
     tokenWebsite: Attribute.String;
     ETHcontract: Attribute.String;
     SocialLinks: Attribute.Component<'token.social-links', true>;
     WhatIsToken: Attribute.String;
-    AboutToken: Attribute.String;
     TokenDescription: Attribute.Text;
+    HTMLmeta: Attribute.Component<'html.htm-lmeta', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -837,6 +872,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::enkrypt-network.enkrypt-network': ApiEnkryptNetworkEnkryptNetwork;
+      'api::ethvm-nft-page.ethvm-nft-page': ApiEthvmNftPageEthvmNftPage;
       'api::ethvm-token-page.ethvm-token-page': ApiEthvmTokenPageEthvmTokenPage;
       'api::mew-token-page.mew-token-page': ApiMewTokenPageMewTokenPage;
     }
