@@ -14,12 +14,12 @@
   "attributes": {
     "HTMLmeta": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "html.htm-lmeta"
     },
     "SocialLinks": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "token.social-links"
     },
     "NFTwebsite": {

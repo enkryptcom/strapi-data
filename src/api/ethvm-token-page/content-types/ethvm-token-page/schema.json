@@ -14,7 +14,7 @@
   "attributes": {
     "TokenBaseInfo": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "token.token-info-shared"
     },
     "tokenWebsite": {
@@ -25,7 +25,7 @@
     },
     "SocialLinks": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "token.social-links"
     },
     "WhatIsToken": {
@@ -36,7 +36,7 @@
     },
     "HTMLmeta": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "html.htm-lmeta"
     }
   }

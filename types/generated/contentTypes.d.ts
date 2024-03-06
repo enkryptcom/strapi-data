@@ -750,8 +750,8 @@ export interface ApiEthvmNftPageEthvmNftPage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    HTMLmeta: Attribute.Component<'html.htm-lmeta', true>;
-    SocialLinks: Attribute.Component<'token.social-links', true>;
+    HTMLmeta: Attribute.Component<'html.htm-lmeta'>;
+    SocialLinks: Attribute.Component<'token.social-links'>;
     NFTwebsite: Attribute.String;
     WhatIsNFT: Attribute.String;
     NFTDescription: Attribute.Text;
@@ -787,13 +787,13 @@ export interface ApiEthvmTokenPageEthvmTokenPage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    TokenBaseInfo: Attribute.Component<'token.token-info-shared', true>;
+    TokenBaseInfo: Attribute.Component<'token.token-info-shared'>;
     tokenWebsite: Attribute.String;
     ETHcontract: Attribute.String;
-    SocialLinks: Attribute.Component<'token.social-links', true>;
+    SocialLinks: Attribute.Component<'token.social-links'>;
     WhatIsToken: Attribute.String;
     TokenDescription: Attribute.Text;
-    HTMLmeta: Attribute.Component<'html.htm-lmeta', true>;
+    HTMLmeta: Attribute.Component<'html.htm-lmeta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
