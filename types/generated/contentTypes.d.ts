@@ -828,6 +828,8 @@ export interface ApiMewFaqMewFaq extends Schema.CollectionType {
     answer: Attribute.Text & Attribute.Required;
     orderInSection: Attribute.Integer;
     sectionID: Attribute.String;
+    linkTitle: Attribute.String;
+    linkURL: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

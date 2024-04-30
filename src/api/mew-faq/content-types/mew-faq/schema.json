@@ -25,6 +25,12 @@
     },
     "sectionID": {
       "type": "string"
+    },
+    "linkTitle": {
+      "type": "string"
+    },
+    "linkURL": {
+      "type": "string"
     }
   }
 }
