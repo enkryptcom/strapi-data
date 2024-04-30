@@ -812,6 +812,74 @@ export interface ApiEthvmTokenPageEthvmTokenPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiMewFaqMewFaq extends Schema.CollectionType {
+  collectionName: 'mew_faqs';
+  info: {
+    singularName: 'mew-faq';
+    pluralName: 'mew-faqs';
+    displayName: 'MEW-faq-question';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.Text & Attribute.Required;
+    orderInSection: Attribute.Integer;
+    sectionID: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mew-faq.mew-faq',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mew-faq.mew-faq',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMewFaqSectionMewFaqSection extends Schema.CollectionType {
+  collectionName: 'mew_faq_sections';
+  info: {
+    singularName: 'mew-faq-section';
+    pluralName: 'mew-faq-sections';
+    displayName: 'MEW-faq-section';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sectionOrder: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    sectionID: Attribute.String & Attribute.Required & Attribute.Unique;
+    sectionTitle: Attribute.String & Attribute.Required;
+    sectionText: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mew-faq-section.mew-faq-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mew-faq-section.mew-faq-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMewTokenPageMewTokenPage extends Schema.CollectionType {
   collectionName: 'mew_token_pages';
   info: {
@@ -874,6 +942,8 @@ declare module '@strapi/types' {
       'api::enkrypt-network.enkrypt-network': ApiEnkryptNetworkEnkryptNetwork;
       'api::ethvm-nft-page.ethvm-nft-page': ApiEthvmNftPageEthvmNftPage;
       'api::ethvm-token-page.ethvm-token-page': ApiEthvmTokenPageEthvmTokenPage;
+      'api::mew-faq.mew-faq': ApiMewFaqMewFaq;
+      'api::mew-faq-section.mew-faq-section': ApiMewFaqSectionMewFaqSection;
       'api::mew-token-page.mew-token-page': ApiMewTokenPageMewTokenPage;
     }
   }
