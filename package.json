@@ -1,16 +1,22 @@
 {
   "name": "strapi-data",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
-  "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi",
-    "postinstall": "patch-package"
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
   },
-  "devDependencies": {},
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "postinstall": "patch-package",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "resolutions": {
+    "gm-palette": "1.0.3"
+  },
   "dependencies": {
     "@strapi/plugin-color-picker": "^4.9.0",
     "@strapi/plugin-i18n": "^4.9.0",
@@ -19,17 +25,18 @@
     "@studio123/strapi-plugin-image-color-palette": "^1.1.2",
     "better-sqlite3": "^8.0.1",
     "patch-package": "^6.5.1",
-    "postinstall-postinstall": "^2.1.0"
+    "postinstall-postinstall": "^2.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
   },
-  "author": {
-    "name": "A Strapi developer"
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.19.1 <=25",
+    "npm": ">=6.0.0"
   },
   "strapi": {
     "uuid": "1678fbb1-40e1-475a-9275-ad9279d37ea7"
-  },
-  "engines": {
-    "node": ">=14.19.1 <=18.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  }
 }

@@ -1,4 +1,4 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface HtmlHtmLmeta extends Schema.Component {
   collectionName: 'components_html_htm_lmetas';
@@ -6,26 +6,26 @@ export interface HtmlHtmLmeta extends Schema.Component {
     displayName: 'HTMLmeta';
   };
   attributes: {
-    title: Attribute.String;
     description: Attribute.Text;
+    title: Attribute.String;
   };
 }
 
 export interface TokenSocialLinks extends Schema.Component {
   collectionName: 'components_token_social_links';
   info: {
-    displayName: 'SocialLinks';
     description: '';
+    displayName: 'SocialLinks';
   };
   attributes: {
-    facebook: Attribute.String;
-    twitter: Attribute.String;
-    instagram: Attribute.String;
-    github: Attribute.String;
-    youtube: Attribute.String;
-    telegram: Attribute.String;
-    linkedin: Attribute.String;
     discord: Attribute.String;
+    facebook: Attribute.String;
+    github: Attribute.String;
+    instagram: Attribute.String;
+    linkedin: Attribute.String;
+    telegram: Attribute.String;
+    twitter: Attribute.String;
+    youtube: Attribute.String;
   };
 }
 
@@ -35,10 +35,10 @@ export interface TokenTokenInfoShared extends Schema.Component {
     displayName: 'TokenInfoShared';
   };
   attributes: {
-    tokenName: Attribute.String;
     coingeckoId: Attribute.String;
-    icon: Attribute.Media;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Symbol: Attribute.String;
+    tokenName: Attribute.String;
   };
 }
 
