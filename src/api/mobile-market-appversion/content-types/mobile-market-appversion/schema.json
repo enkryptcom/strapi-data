@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_market_appversions",
+  "info": {
+    "singularName": "mobile-market-appversion",
+    "pluralName": "mobile-market-appversions",
+    "displayName": "mobile-market-appversion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ios": {
+      "type": "string"
+    },
+    "android": {
+      "type": "string"
+    }
+  }
+}

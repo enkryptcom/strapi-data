@@ -11,6 +11,60 @@ export interface HtmlHtmLmeta extends Struct.ComponentSchema {
   };
 }
 
+export interface MobileMarketItemCollectiongroup
+  extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_collectiongroups';
+  info: {
+    displayName: 'market-item-collection-group';
+  };
+  attributes: {
+    collections: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-collection.mobile-market-collection'
+    >;
+    description: Schema.Attribute.Text;
+    style: Schema.Attribute.Enumeration<['list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'list'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MobileMarketItemFaq extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_faqs';
+  info: {
+    displayName: 'market-item-faq';
+  };
+  attributes: {
+    is_rwa_restricted: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-faq.mobile-market-faq'
+    >;
+    style: Schema.Attribute.Enumeration<['list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'list'>;
+    title_private: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MobileMarketItemSystem extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_systems';
+  info: {
+    displayName: 'market-item-system';
+  };
+  attributes: {
+    min_version: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::mobile-market-appversion.mobile-market-appversion'
+    >;
+    style: Schema.Attribute.Enumeration<['default']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'default'>;
+    type: Schema.Attribute.Enumeration<['system_filters', 'system_recent']>;
+  };
+}
+
 export interface TokenSocialLinks extends Struct.ComponentSchema {
   collectionName: 'components_token_social_links';
   info: {
@@ -46,6 +100,9 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'html.htm-lmeta': HtmlHtmLmeta;
+      'mobile.market-item-collectiongroup': MobileMarketItemCollectiongroup;
+      'mobile.market-item-faq': MobileMarketItemFaq;
+      'mobile.market-item-system': MobileMarketItemSystem;
       'token.social-links': TokenSocialLinks;
       'token.token-info-shared': TokenTokenInfoShared;
     }

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_market_collection_slugs",
+  "info": {
+    "singularName": "mobile-market-collection-slug",
+    "pluralName": "mobile-market-collection-slugs",
+    "displayName": "mobile-market-collection-slug"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug_id": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_mobile_market_item_systems",
+  "info": {
+    "displayName": "market-item-system"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "system_filters",
+        "system_recent"
+      ]
+    },
+    "style": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default"
+      ]
+    },
+    "min_version": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mobile-market-appversion.mobile-market-appversion"
+    }
+  },
+  "config": {}
+}

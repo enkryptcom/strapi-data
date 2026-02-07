@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobile_markets",
+  "info": {
+    "singularName": "mobile-market",
+    "pluralName": "mobile-markets",
+    "displayName": "mobile-market"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "crypto": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mobile-market-crypto.mobile-market-crypto"
+    },
+    "today": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mobile-market-today.mobile-market-today"
+    },
+    "stocks": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mobile-market-stock.mobile-market-stock"
+    }
+  }
+}

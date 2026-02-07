@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_market_stocks",
+  "info": {
+    "singularName": "mobile-market-stock",
+    "pluralName": "mobile-market-stocks",
+    "displayName": "mobile-market-stock"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_private": {
+      "type": "string",
+      "private": true,
+      "required": true
+    },
+    "items": {
+      "type": "dynamiczone",
+      "components": [
+        "mobile.market-item-system",
+        "mobile.market-item-collectiongroup",
+        "mobile.market-item-faq"
+      ]
+    }
+  }
+}

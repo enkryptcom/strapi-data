@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_market_faqs",
+  "info": {
+    "singularName": "mobile-market-faq",
+    "pluralName": "mobile-market-faqs",
+    "displayName": "mobile-market-faq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faq": {
+      "type": "uid",
+      "targetField": "question"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  }
+}

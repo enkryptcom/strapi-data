@@ -674,6 +674,307 @@ export interface ApiMewTokenPageMewTokenPage
   };
 }
 
+export interface ApiMobileMarketAppversionMobileMarketAppversion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_appversions';
+  info: {
+    displayName: 'mobile-market-appversion';
+    pluralName: 'mobile-market-appversions';
+    singularName: 'mobile-market-appversion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    android: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ios: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-appversion.mobile-market-appversion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketCollectionSlugMobileMarketCollectionSlug
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_collection_slugs';
+  info: {
+    displayName: 'mobile-market-collection-slug';
+    pluralName: 'mobile-market-collection-slugs';
+    singularName: 'mobile-market-collection-slug';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-collection-slug.mobile-market-collection-slug'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug_id: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketCollectionMobileMarketCollection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_collections';
+  info: {
+    displayName: 'mobile-market-collection';
+    pluralName: 'mobile-market-collections';
+    singularName: 'mobile-market-collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data_type: Schema.Attribute.Enumeration<
+      [
+        'crypto',
+        'crypto_stablecoins',
+        'crypto_l1s',
+        'crypto_defi',
+        'stocks',
+        'stocks_etf',
+        'all',
+      ]
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-collection.mobile-market-collection'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::mobile-market-collection-slug.mobile-market-collection-slug'
+    >;
+    title_private: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    type: Schema.Attribute.Enumeration<
+      [
+        'system_tranding',
+        'system_gainers',
+        'system_losers',
+        'system_recenly_added',
+        'system_top_movers',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketCryptoMobileMarketCrypto
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_cryptos';
+  info: {
+    displayName: 'mobile-market-crypto';
+    pluralName: 'mobile-market-cryptos';
+    singularName: 'mobile-market-crypto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.DynamicZone<
+      [
+        'mobile.market-item-system',
+        'mobile.market-item-collectiongroup',
+        'mobile.market-item-faq',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-crypto.mobile-market-crypto'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title_private: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketFaqMobileMarketFaq
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_faqs';
+  info: {
+    displayName: 'mobile-market-faq';
+    pluralName: 'mobile-market-faqs';
+    singularName: 'mobile-market-faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.UID<'question'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-faq.mobile-market-faq'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketStockMobileMarketStock
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_stocks';
+  info: {
+    displayName: 'mobile-market-stock';
+    pluralName: 'mobile-market-stocks';
+    singularName: 'mobile-market-stock';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.DynamicZone<
+      [
+        'mobile.market-item-system',
+        'mobile.market-item-collectiongroup',
+        'mobile.market-item-faq',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-stock.mobile-market-stock'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title_private: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketTodayMobileMarketToday
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mobile_market_todays';
+  info: {
+    displayName: 'mobile-market-today';
+    pluralName: 'mobile-market-todays';
+    singularName: 'mobile-market-today';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.DynamicZone<
+      [
+        'mobile.market-item-system',
+        'mobile.market-item-collectiongroup',
+        'mobile.market-item-faq',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-today.mobile-market-today'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title_private: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMobileMarketMobileMarket extends Struct.SingleTypeSchema {
+  collectionName: 'mobile_markets';
+  info: {
+    displayName: 'mobile-market';
+    pluralName: 'mobile-markets';
+    singularName: 'mobile-market';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    crypto: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::mobile-market-crypto.mobile-market-crypto'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market.mobile-market'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    stocks: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::mobile-market-stock.mobile-market-stock'
+    >;
+    today: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::mobile-market-today.mobile-market-today'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1191,6 +1492,14 @@ declare module '@strapi/strapi' {
       'api::mew-faq-section.mew-faq-section': ApiMewFaqSectionMewFaqSection;
       'api::mew-faq.mew-faq': ApiMewFaqMewFaq;
       'api::mew-token-page.mew-token-page': ApiMewTokenPageMewTokenPage;
+      'api::mobile-market-appversion.mobile-market-appversion': ApiMobileMarketAppversionMobileMarketAppversion;
+      'api::mobile-market-collection-slug.mobile-market-collection-slug': ApiMobileMarketCollectionSlugMobileMarketCollectionSlug;
+      'api::mobile-market-collection.mobile-market-collection': ApiMobileMarketCollectionMobileMarketCollection;
+      'api::mobile-market-crypto.mobile-market-crypto': ApiMobileMarketCryptoMobileMarketCrypto;
+      'api::mobile-market-faq.mobile-market-faq': ApiMobileMarketFaqMobileMarketFaq;
+      'api::mobile-market-stock.mobile-market-stock': ApiMobileMarketStockMobileMarketStock;
+      'api::mobile-market-today.mobile-market-today': ApiMobileMarketTodayMobileMarketToday;
+      'api::mobile-market.mobile-market': ApiMobileMarketMobileMarket;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

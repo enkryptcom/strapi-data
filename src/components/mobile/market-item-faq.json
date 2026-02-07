@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_mobile_market_item_faqs",
+  "info": {
+    "displayName": "market-item-faq"
+  },
+  "options": {},
+  "attributes": {
+    "title_private": {
+      "type": "string",
+      "required": true
+    },
+    "style": {
+      "type": "enumeration",
+      "required": true,
+      "default": "list",
+      "enum": [
+        "list"
+      ]
+    },
+    "is_rwa_restricted": {
+      "type": "boolean",
+      "required": true
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mobile-market-faq.mobile-market-faq"
+    }
+  },
+  "config": {}
+}

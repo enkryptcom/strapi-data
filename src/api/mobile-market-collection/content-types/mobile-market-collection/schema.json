@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mobile_market_collections",
+  "info": {
+    "singularName": "mobile-market-collection",
+    "pluralName": "mobile-market-collections",
+    "displayName": "mobile-market-collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_private": {
+      "type": "string",
+      "private": true,
+      "required": true
+    },
+    "slug": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mobile-market-collection-slug.mobile-market-collection-slug"
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "system_tranding",
+        "system_gainers",
+        "system_losers",
+        "system_recenly_added",
+        "system_top_movers"
+      ]
+    },
+    "data_type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "crypto",
+        "crypto_stablecoins",
+        "crypto_l1s",
+        "crypto_defi",
+        "stocks",
+        "stocks_etf",
+        "all"
+      ]
+    }
+  }
+}
