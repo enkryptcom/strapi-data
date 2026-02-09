@@ -5,6 +5,14 @@
   },
   "options": {},
   "attributes": {
+    "component_type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "collection_group",
+      "enum": [
+        "collection_group"
+      ]
+    },
     "title": {
       "type": "string",
       "required": true

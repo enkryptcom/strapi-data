@@ -5,6 +5,14 @@
   },
   "options": {},
   "attributes": {
+    "component_type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "system",
+      "enum": [
+        "system"
+      ]
+    },
     "type": {
       "type": "enumeration",
       "enum": [

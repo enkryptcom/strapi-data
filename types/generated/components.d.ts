@@ -22,6 +22,9 @@ export interface MobileMarketItemCollectiongroup
       'oneToMany',
       'api::mobile-market-collection.mobile-market-collection'
     >;
+    component_type: Schema.Attribute.Enumeration<['collection_group']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'collection_group'>;
     description: Schema.Attribute.Text;
     style: Schema.Attribute.Enumeration<['list']> &
       Schema.Attribute.Required &
@@ -36,6 +39,9 @@ export interface MobileMarketItemFaq extends Struct.ComponentSchema {
     displayName: 'market-item-faq';
   };
   attributes: {
+    component_type: Schema.Attribute.Enumeration<['faq']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'faq'>;
     is_rwa_restricted: Schema.Attribute.Boolean & Schema.Attribute.Required;
     items: Schema.Attribute.Relation<
       'oneToMany',
@@ -54,6 +60,9 @@ export interface MobileMarketItemSystem extends Struct.ComponentSchema {
     displayName: 'market-item-system';
   };
   attributes: {
+    component_type: Schema.Attribute.Enumeration<['system']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'system'>;
     min_version: Schema.Attribute.Relation<
       'oneToOne',
       'api::mobile-market-appversion.mobile-market-appversion'

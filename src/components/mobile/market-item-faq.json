@@ -5,6 +5,14 @@
   },
   "options": {},
   "attributes": {
+    "component_type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "faq",
+      "enum": [
+        "faq"
+      ]
+    },
     "title_private": {
       "type": "string",
       "required": true
