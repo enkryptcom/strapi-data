@@ -20,6 +20,14 @@
         "system_recent"
       ]
     },
+    "data_type": {
+      "type": "enumeration",
+      "enum": [
+        "crypto",
+        "stocks",
+        "all"
+      ]
+    },
     "style": {
       "type": "enumeration",
       "required": true,

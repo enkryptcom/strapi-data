@@ -5,6 +5,11 @@
   },
   "options": {},
   "attributes": {
+    "group_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
     "component_type": {
       "type": "enumeration",
       "required": true,
@@ -23,9 +28,9 @@
     "style": {
       "type": "enumeration",
       "required": true,
-      "default": "list",
+      "default": "pager",
       "enum": [
-        "list"
+        "pager"
       ]
     },
     "collections": {

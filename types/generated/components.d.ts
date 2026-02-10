@@ -26,9 +26,12 @@ export interface MobileMarketItemCollectiongroup
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'collection_group'>;
     description: Schema.Attribute.Text;
-    style: Schema.Attribute.Enumeration<['list']> &
+    group_id: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'list'>;
+      Schema.Attribute.Unique;
+    style: Schema.Attribute.Enumeration<['pager']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'pager'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -63,6 +66,7 @@ export interface MobileMarketItemSystem extends Struct.ComponentSchema {
     component_type: Schema.Attribute.Enumeration<['system']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'system'>;
+    data_type: Schema.Attribute.Enumeration<['crypto', 'stocks', 'all']>;
     min_version: Schema.Attribute.Relation<
       'oneToOne',
       'api::mobile-market-appversion.mobile-market-appversion'
