@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_mobile_market_item_faq_contents",
+  "info": {
+    "displayName": "market-item-faq-content"
+  },
+  "options": {},
+  "attributes": {
+    "is_rwa_restricted": {
+      "type": "boolean",
+      "required": true
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mobile-market-faq.mobile-market-faq"
+    }
+  },
+  "config": {}
+}

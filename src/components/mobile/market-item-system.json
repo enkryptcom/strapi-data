@@ -13,6 +13,14 @@
         "system"
       ]
     },
+    "style": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default"
+      ]
+    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -26,14 +34,6 @@
         "crypto",
         "stocks",
         "all"
-      ]
-    },
-    "style": {
-      "type": "enumeration",
-      "required": true,
-      "default": "default",
-      "enum": [
-        "default"
       ]
     },
     "min_version": {

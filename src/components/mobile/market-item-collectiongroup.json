@@ -5,11 +5,6 @@
   },
   "options": {},
   "attributes": {
-    "group_id": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "component_type": {
       "type": "enumeration",
       "required": true,
@@ -17,13 +12,6 @@
       "enum": [
         "collection_group"
       ]
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "text"
     },
     "style": {
       "type": "enumeration",
@@ -33,10 +21,11 @@
         "pager"
       ]
     },
-    "collections": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::mobile-market-collection.mobile-market-collection"
+    "content": {
+      "type": "component",
+      "component": "mobile.market-item-collection-group-content",
+      "repeatable": false,
+      "required": true
     }
   },
   "config": {}

@@ -13,10 +13,6 @@
         "faq"
       ]
     },
-    "title_private": {
-      "type": "string",
-      "required": true
-    },
     "style": {
       "type": "enumeration",
       "required": true,
@@ -25,14 +21,15 @@
         "list"
       ]
     },
-    "is_rwa_restricted": {
-      "type": "boolean",
+    "content": {
+      "type": "component",
+      "component": "mobile.market-item-faq-content",
+      "repeatable": false,
       "required": true
     },
-    "items": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::mobile-market-faq.mobile-market-faq"
+    "title_private": {
+      "type": "string",
+      "required": true
     }
   },
   "config": {}

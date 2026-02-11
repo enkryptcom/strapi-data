@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_mobile_market_item_collection_group_contents",
+  "info": {
+    "displayName": "market-item-collection-group-content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "group_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mobile-market-collection.mobile-market-collection"
+    }
+  },
+  "config": {}
+}

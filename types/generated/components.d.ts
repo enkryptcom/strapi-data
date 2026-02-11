@@ -11,6 +11,25 @@ export interface HtmlHtmLmeta extends Struct.ComponentSchema {
   };
 }
 
+export interface MobileMarketItemCollectionGroupContent
+  extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_collection_group_contents';
+  info: {
+    displayName: 'market-item-collection-group-content';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    group_id: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mobile-market-collection.mobile-market-collection'
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface MobileMarketItemCollectiongroup
   extends Struct.ComponentSchema {
   collectionName: 'components_mobile_market_item_collectiongroups';
@@ -18,21 +37,17 @@ export interface MobileMarketItemCollectiongroup
     displayName: 'market-item-collection-group';
   };
   attributes: {
-    collections: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::mobile-market-collection.mobile-market-collection'
-    >;
     component_type: Schema.Attribute.Enumeration<['collection_group']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'collection_group'>;
-    description: Schema.Attribute.Text;
-    group_id: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    content: Schema.Attribute.Component<
+      'mobile.market-item-collection-group-content',
+      false
+    > &
+      Schema.Attribute.Required;
     style: Schema.Attribute.Enumeration<['pager']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'pager'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -45,15 +60,29 @@ export interface MobileMarketItemFaq extends Struct.ComponentSchema {
     component_type: Schema.Attribute.Enumeration<['faq']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'faq'>;
+    content: Schema.Attribute.Component<
+      'mobile.market-item-faq-content',
+      false
+    > &
+      Schema.Attribute.Required;
+    style: Schema.Attribute.Enumeration<['list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'list'>;
+    title_private: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface MobileMarketItemFaqContent extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_faq_contents';
+  info: {
+    displayName: 'market-item-faq-content';
+  };
+  attributes: {
     is_rwa_restricted: Schema.Attribute.Boolean & Schema.Attribute.Required;
     items: Schema.Attribute.Relation<
       'oneToMany',
       'api::mobile-market-faq.mobile-market-faq'
     >;
-    style: Schema.Attribute.Enumeration<['list']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'list'>;
-    title_private: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -113,8 +142,10 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'html.htm-lmeta': HtmlHtmLmeta;
+      'mobile.market-item-collection-group-content': MobileMarketItemCollectionGroupContent;
       'mobile.market-item-collectiongroup': MobileMarketItemCollectiongroup;
       'mobile.market-item-faq': MobileMarketItemFaq;
+      'mobile.market-item-faq-content': MobileMarketItemFaqContent;
       'mobile.market-item-system': MobileMarketItemSystem;
       'token.social-links': TokenSocialLinks;
       'token.token-info-shared': TokenTokenInfoShared;
