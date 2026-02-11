@@ -40,7 +40,7 @@ export interface MobileMarketItemCollectiongroup
     component_type: Schema.Attribute.Enumeration<['collection_group']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'collection_group'>;
-    content: Schema.Attribute.Component<
+    group: Schema.Attribute.Component<
       'mobile.market-item-collection-group-content',
       false
     > &
@@ -60,10 +60,7 @@ export interface MobileMarketItemFaq extends Struct.ComponentSchema {
     component_type: Schema.Attribute.Enumeration<['faq']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'faq'>;
-    content: Schema.Attribute.Component<
-      'mobile.market-item-faq-content',
-      false
-    > &
+    faq: Schema.Attribute.Component<'mobile.market-item-faq-content', false> &
       Schema.Attribute.Required;
     style: Schema.Attribute.Enumeration<['list']> &
       Schema.Attribute.Required &

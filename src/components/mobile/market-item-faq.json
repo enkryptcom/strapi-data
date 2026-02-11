@@ -21,7 +21,7 @@
         "list"
       ]
     },
-    "content": {
+    "faq": {
       "type": "component",
       "component": "mobile.market-item-faq-content",
       "repeatable": false,

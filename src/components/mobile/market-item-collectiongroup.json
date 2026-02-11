@@ -21,7 +21,7 @@
         "pager"
       ]
     },
-    "content": {
+    "group": {
       "type": "component",
       "component": "mobile.market-item-collection-group-content",
       "repeatable": false,
