@@ -11,10 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title_private": {
+    "title": {
       "type": "string",
-      "private": true,
       "required": true
+    },
+    "subtitle": {
+      "type": "text"
     },
     "slug": {
       "type": "relation",

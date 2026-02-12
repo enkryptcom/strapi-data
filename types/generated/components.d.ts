@@ -75,11 +75,15 @@ export interface MobileMarketItemFaqContent extends Struct.ComponentSchema {
     displayName: 'market-item-faq-content';
   };
   attributes: {
+    faq_id: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     is_rwa_restricted: Schema.Attribute.Boolean & Schema.Attribute.Required;
     items: Schema.Attribute.Relation<
       'oneToMany',
       'api::mobile-market-faq.mobile-market-faq'
     >;
+    title: Schema.Attribute.String;
   };
 }
 

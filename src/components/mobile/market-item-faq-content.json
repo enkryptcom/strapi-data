@@ -9,6 +9,14 @@
       "type": "boolean",
       "required": true
     },
+    "faq_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string"
+    },
     "items": {
       "type": "relation",
       "relation": "oneToMany",

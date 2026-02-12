@@ -772,9 +772,8 @@ export interface ApiMobileMarketCollectionMobileMarketCollection
       'oneToOne',
       'api::mobile-market-collection-slug.mobile-market-collection-slug'
     >;
-    title_private: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<
       [
         'system_tranding',
