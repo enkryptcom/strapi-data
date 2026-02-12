@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_mobile_market_item_banners",
+  "info": {
+    "displayName": "market-item-banner"
+  },
+  "options": {},
+  "attributes": {
+    "component_type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "banner"
+      ]
+    },
+    "style": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "default"
+      ]
+    },
+    "banner": {
+      "type": "component",
+      "component": "mobile.market-item-banner-content",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

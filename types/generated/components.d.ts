@@ -11,6 +11,40 @@ export interface HtmlHtmLmeta extends Struct.ComponentSchema {
   };
 }
 
+export interface MobileMarketItemBanner extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_banners';
+  info: {
+    displayName: 'market-item-banner';
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<
+      'mobile.market-item-banner-content',
+      false
+    > &
+      Schema.Attribute.Required;
+    component_type: Schema.Attribute.Enumeration<['banner']> &
+      Schema.Attribute.Required;
+    style: Schema.Attribute.Enumeration<['default']> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface MobileMarketItemBannerContent extends Struct.ComponentSchema {
+  collectionName: 'components_mobile_market_item_banner_contents';
+  info: {
+    displayName: 'market-item-banner-content';
+  };
+  attributes: {
+    banner_id: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface MobileMarketItemCollectionGroupContent
   extends Struct.ComponentSchema {
   collectionName: 'components_mobile_market_item_collection_group_contents';
@@ -104,7 +138,9 @@ export interface MobileMarketItemSystem extends Struct.ComponentSchema {
     style: Schema.Attribute.Enumeration<['default']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'default'>;
-    type: Schema.Attribute.Enumeration<['system_filters', 'system_recent']>;
+    type: Schema.Attribute.Enumeration<
+      ['system_filters', 'system_recent', 'system_watchlist']
+    >;
   };
 }
 
@@ -143,6 +179,8 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'html.htm-lmeta': HtmlHtmLmeta;
+      'mobile.market-item-banner': MobileMarketItemBanner;
+      'mobile.market-item-banner-content': MobileMarketItemBannerContent;
       'mobile.market-item-collection-group-content': MobileMarketItemCollectionGroupContent;
       'mobile.market-item-collectiongroup': MobileMarketItemCollectiongroup;
       'mobile.market-item-faq': MobileMarketItemFaq;

@@ -776,7 +776,7 @@ export interface ApiMobileMarketCollectionMobileMarketCollection
     title: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<
       [
-        'system_tranding',
+        'system_trending',
         'system_gainers',
         'system_losers',
         'system_recenly_added',
@@ -810,6 +810,7 @@ export interface ApiMobileMarketCryptoMobileMarketCrypto
         'mobile.market-item-system',
         'mobile.market-item-collectiongroup',
         'mobile.market-item-faq',
+        'mobile.market-item-banner',
       ]
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

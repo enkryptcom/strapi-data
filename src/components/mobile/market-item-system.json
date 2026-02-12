@@ -25,7 +25,8 @@
       "type": "enumeration",
       "enum": [
         "system_filters",
-        "system_recent"
+        "system_recent",
+        "system_watchlist"
       ]
     },
     "data_type": {

@@ -27,7 +27,7 @@
       "type": "enumeration",
       "required": true,
       "enum": [
-        "system_tranding",
+        "system_trending",
         "system_gainers",
         "system_losers",
         "system_recenly_added",

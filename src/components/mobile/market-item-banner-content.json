@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_mobile_market_item_banner_contents",
+  "info": {
+    "displayName": "market-item-banner-content"
+  },
+  "options": {},
+  "attributes": {
+    "banner_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
