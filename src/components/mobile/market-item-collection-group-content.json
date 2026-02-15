@@ -7,10 +7,14 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "text"
+    },
+    "details_title": {
+      "type": "string",
+      "required": false
     },
     "group_id": {
       "type": "string",

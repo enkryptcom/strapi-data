@@ -21,7 +21,8 @@
       "components": [
         "mobile.market-item-system",
         "mobile.market-item-collectiongroup",
-        "mobile.market-item-faq"
+        "mobile.market-item-faq",
+        "mobile.market-item-banner"
       ]
     }
   }

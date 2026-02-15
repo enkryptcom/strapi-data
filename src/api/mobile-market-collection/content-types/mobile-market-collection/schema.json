@@ -27,6 +27,7 @@
       "type": "enumeration",
       "required": true,
       "enum": [
+        "system_market_cap",
         "system_trending",
         "system_gainers",
         "system_losers",
@@ -44,6 +45,13 @@
         "crypto_defi",
         "stocks",
         "stocks_etf",
+        "stocks_us_companies",
+        "stocks_growth",
+        "stocks_dividend",
+        "stocks_tech",
+        "stocks_healthcare",
+        "stocks_finance",
+        "stocks_small_to_mid_cap",
         "all"
       ]
     }

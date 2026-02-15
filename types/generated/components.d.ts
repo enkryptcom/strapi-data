@@ -53,6 +53,7 @@ export interface MobileMarketItemCollectionGroupContent
   };
   attributes: {
     description: Schema.Attribute.Text;
+    details_title: Schema.Attribute.String;
     group_id: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -60,7 +61,7 @@ export interface MobileMarketItemCollectionGroupContent
       'oneToMany',
       'api::mobile-market-collection.mobile-market-collection'
     >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -79,7 +80,7 @@ export interface MobileMarketItemCollectiongroup
       false
     > &
       Schema.Attribute.Required;
-    style: Schema.Attribute.Enumeration<['pager']> &
+    style: Schema.Attribute.Enumeration<['pager', 'list']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'pager'>;
   };

@@ -757,6 +757,13 @@ export interface ApiMobileMarketCollectionMobileMarketCollection
         'crypto_defi',
         'stocks',
         'stocks_etf',
+        'stocks_us_companies',
+        'stocks_growth',
+        'stocks_dividend',
+        'stocks_tech',
+        'stocks_healthcare',
+        'stocks_finance',
+        'stocks_small_to_mid_cap',
         'all',
       ]
     > &
@@ -776,6 +783,7 @@ export interface ApiMobileMarketCollectionMobileMarketCollection
     title: Schema.Attribute.String & Schema.Attribute.Required;
     type: Schema.Attribute.Enumeration<
       [
+        'system_market_cap',
         'system_trending',
         'system_gainers',
         'system_losers',
@@ -880,6 +888,7 @@ export interface ApiMobileMarketStockMobileMarketStock
         'mobile.market-item-system',
         'mobile.market-item-collectiongroup',
         'mobile.market-item-faq',
+        'mobile.market-item-banner',
       ]
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -918,6 +927,7 @@ export interface ApiMobileMarketTodayMobileMarketToday
         'mobile.market-item-system',
         'mobile.market-item-collectiongroup',
         'mobile.market-item-faq',
+        'mobile.market-item-banner',
       ]
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
