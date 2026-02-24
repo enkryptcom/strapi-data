@@ -29,7 +29,7 @@
     },
     "url": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "config": {}
