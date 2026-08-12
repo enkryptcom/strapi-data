@@ -561,6 +561,42 @@ export interface ApiEthvmTokenPageEthvmTokenPage
   };
 }
 
+export interface ApiMewAbMarketingExperimentMewAbMarketingExperiment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mew_ab_marketing_experiments';
+  info: {
+    displayName: 'MEW-marketing';
+    pluralName: 'mew-ab-marketing-experiments';
+    singularName: 'mew-ab-marketing-experiment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    endAt: Schema.Attribute.DateTime;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mew-ab-marketing-experiment.mew-ab-marketing-experiment'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    startAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    tokenId: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMewFaqSectionMewFaqSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'mew_faq_sections';
@@ -1188,6 +1224,7 @@ declare module '@strapi/strapi' {
       'api::enkrypt-network.enkrypt-network': ApiEnkryptNetworkEnkryptNetwork;
       'api::ethvm-nft-page.ethvm-nft-page': ApiEthvmNftPageEthvmNftPage;
       'api::ethvm-token-page.ethvm-token-page': ApiEthvmTokenPageEthvmTokenPage;
+      'api::mew-ab-marketing-experiment.mew-ab-marketing-experiment': ApiMewAbMarketingExperimentMewAbMarketingExperiment;
       'api::mew-faq-section.mew-faq-section': ApiMewFaqSectionMewFaqSection;
       'api::mew-faq.mew-faq': ApiMewFaqMewFaq;
       'api::mew-token-page.mew-token-page': ApiMewTokenPageMewTokenPage;

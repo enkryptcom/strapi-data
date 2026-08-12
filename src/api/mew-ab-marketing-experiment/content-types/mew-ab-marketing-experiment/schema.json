@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mew_ab_marketing_experiments",
+  "info": {
+    "singularName": "mew-ab-marketing-experiment",
+    "pluralName": "mew-ab-marketing-experiments",
+    "displayName": "MEW-marketing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "tokenId": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "startAt": {
+      "type": "datetime"
+    },
+    "endAt": {
+      "type": "datetime"
+    }
+  }
+}
