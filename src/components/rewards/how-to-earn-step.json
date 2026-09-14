@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_rewards_how_to_earn_steps",
+  "info": {
+    "displayName": "HowToEarnStep",
+    "description": "One arrow-bulleted line in the 'How to earn this reward' list"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

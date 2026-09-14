@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_rewards_platforms",
+  "info": {
+    "displayName": "Platform",
+    "description": "Platform pill shown on campaign cards and detail hero"
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "enumeration",
+      "enum": [
+        "MEW Mobile",
+        "MEW Portfolio",
+        "MEW web",
+        "Enkrypt"
+      ],
+      "required": true
+    }
+  }
+}

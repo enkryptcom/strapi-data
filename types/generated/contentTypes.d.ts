@@ -668,6 +668,95 @@ export interface ApiMewFaqMewFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMewRewardsCampaignMewRewardsCampaign
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mew_rewards_campaigns';
+  info: {
+    description: 'MEW Rewards campaigns: list cards (/rewards) and detail pages (/rewards/:id)';
+    displayName: 'MEW-rewards-campaign';
+    pluralName: 'mew-rewards-campaigns';
+    singularName: 'mew-rewards-campaign';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campaign_status: Schema.Attribute.Enumeration<
+      ['new', 'ending', 'permanent', 'ended']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'new'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    how_to_earn: Schema.Attribute.Component<'rewards.how-to-earn-step', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mew-rewards-campaign.mew-rewards-campaign'
+    > &
+      Schema.Attribute.Private;
+    long_description: Schema.Attribute.Text;
+    products: Schema.Attribute.Component<'rewards.platform', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
+    reward_info: Schema.Attribute.Component<'rewards.reward-info', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    terms: Schema.Attribute.Component<'rewards.terms', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMewRewardsStatMewRewardsStat
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mew_rewards_stats';
+  info: {
+    description: "'Rewards in numbers' section on /rewards; can be toggled off, 2-4 columns";
+    displayName: 'MEW-rewards-stats';
+    pluralName: 'mew-rewards-stats';
+    singularName: 'mew-rewards-stat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enabled: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    items: Schema.Attribute.Component<'rewards.stat-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mew-rewards-stat.mew-rewards-stat'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMewTokenPageMewTokenPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'mew_token_pages';
@@ -1227,6 +1316,8 @@ declare module '@strapi/strapi' {
       'api::mew-ab-marketing-experiment.mew-ab-marketing-experiment': ApiMewAbMarketingExperimentMewAbMarketingExperiment;
       'api::mew-faq-section.mew-faq-section': ApiMewFaqSectionMewFaqSection;
       'api::mew-faq.mew-faq': ApiMewFaqMewFaq;
+      'api::mew-rewards-campaign.mew-rewards-campaign': ApiMewRewardsCampaignMewRewardsCampaign;
+      'api::mew-rewards-stat.mew-rewards-stat': ApiMewRewardsStatMewRewardsStat;
       'api::mew-token-page.mew-token-page': ApiMewTokenPageMewTokenPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

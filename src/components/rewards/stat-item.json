@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_rewards_stat_items",
+  "info": {
+    "displayName": "StatItem",
+    "description": "One column in the 'Rewards in numbers' bar"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

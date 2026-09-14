@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "mew_rewards_stats",
+  "info": {
+    "singularName": "mew-rewards-stat",
+    "pluralName": "mew-rewards-stats",
+    "displayName": "MEW-rewards-stats",
+    "description": "'Rewards in numbers' section on /rewards; can be toggled off, 2-4 columns"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "rewards.stat-item",
+      "max": 4
+    }
+  }
+}

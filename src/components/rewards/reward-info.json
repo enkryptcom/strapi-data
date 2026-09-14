@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_rewards_reward_infos",
+  "info": {
+    "displayName": "RewardInfo",
+    "description": "Blue reward panel on the campaign detail page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "rewards.cta-button"
+    }
+  }
+}

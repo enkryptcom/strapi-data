@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_rewards_cta_buttons",
+  "info": {
+    "displayName": "CtaButton",
+    "description": "Button rendered inside the reward info card; theme maps to a frontend button variant"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "theme": {
+      "type": "string",
+      "required": true,
+      "default": "primary"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_rewards_terms",
+  "info": {
+    "displayName": "Terms",
+    "description": "Terms block on the campaign detail page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
