@@ -28,6 +28,7 @@ const toCampaignDetail = (entity: any) => ({
         cta: (entity.reward_info.cta ?? []).map((button: any) => ({
           title: button.title,
           theme: button.theme,
+          url: button.url ?? '',
         })),
       }
     : null,
