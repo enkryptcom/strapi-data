@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_rewards_links",
+  "info": {
+    "displayName": "Link",
+    "description": "Titled link; used for the terms URL on the campaign detail page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

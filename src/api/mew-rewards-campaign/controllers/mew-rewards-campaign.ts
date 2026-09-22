@@ -37,6 +37,10 @@ const toCampaignDetail = (entity: any) => ({
     ? {
         title: entity.terms.title,
         description: entity.terms.description,
+        url: {
+          title: entity.terms.url?.title ?? '',
+          url: entity.terms.url?.url ?? '',
+        },
       }
     : null,
 });
@@ -65,7 +69,7 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
         products: true,
         reward_info: { populate: { cta: true } },
         how_to_earn: true,
-        terms: true,
+        terms: { populate: { url: true } },
       },
     });
 
