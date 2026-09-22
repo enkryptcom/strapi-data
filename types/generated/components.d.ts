@@ -37,6 +37,18 @@ export interface RewardsHowToEarnStep extends Struct.ComponentSchema {
   };
 }
 
+export interface RewardsLink extends Struct.ComponentSchema {
+  collectionName: 'components_rewards_links';
+  info: {
+    description: 'Titled link; used for the terms URL on the campaign detail page';
+    displayName: 'Link';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface RewardsPlatform extends Struct.ComponentSchema {
   collectionName: 'components_rewards_platforms';
   info: {
@@ -85,6 +97,8 @@ export interface RewardsTerms extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Component<'rewards.link', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -125,6 +139,7 @@ declare module '@strapi/strapi' {
       'html.htm-lmeta': HtmlHtmLmeta;
       'rewards.cta-button': RewardsCtaButton;
       'rewards.how-to-earn-step': RewardsHowToEarnStep;
+      'rewards.link': RewardsLink;
       'rewards.platform': RewardsPlatform;
       'rewards.reward-info': RewardsRewardInfo;
       'rewards.stat-item': RewardsStatItem;

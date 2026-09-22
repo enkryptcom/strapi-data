@@ -13,6 +13,12 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "url": {
+      "type": "component",
+      "repeatable": false,
+      "component": "rewards.link",
+      "required": true
     }
   }
 }
