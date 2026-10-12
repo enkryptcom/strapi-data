@@ -3,6 +3,9 @@
  *
  * The attribute is named `campaign_status` because `status` is reserved by
  * Strapi's draft & publish; responses expose it as `status` per the API contract.
+ * `campaign_status` is a boolean: true = active (listed on /campaigns),
+ * false = ended (hidden from the list, still reachable by slug).
+ * `status_badge` is the optional label/color pill rendered on cards and the hero.
  */
 
 import { factories } from '@strapi/strapi';
@@ -15,7 +18,13 @@ const toCampaign = (entity: any) => ({
   title: entity.title,
   description: entity.description,
   cta: entity.cta,
-  status: entity.campaign_status,
+  status: Boolean(entity.campaign_status),
+  status_badge: entity.status_badge
+    ? {
+        title: entity.status_badge.title,
+        color: entity.status_badge.color,
+      }
+    : null,
 });
 
 const toCampaignDetail = (entity: any) => ({
@@ -50,8 +59,8 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
   async findCampaigns(ctx) {
     const entities = await strapi.documents(UID).findMany({
       status: 'published',
-      filters: { campaign_status: { $ne: 'ended' } },
-      populate: { products: true },
+      filters: { campaign_status: true },
+      populate: { products: true, status_badge: true },
       sort: 'createdAt:desc',
     });
 
@@ -67,6 +76,7 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
       filters: { slug: id },
       populate: {
         products: true,
+        status_badge: true,
         reward_info: { populate: { cta: true } },
         how_to_earn: true,
         terms: { populate: { url: true } },

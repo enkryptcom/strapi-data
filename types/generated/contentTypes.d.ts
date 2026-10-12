@@ -681,11 +681,9 @@ export interface ApiMewRewardsCampaignMewRewardsCampaign
     draftAndPublish: true;
   };
   attributes: {
-    campaign_status: Schema.Attribute.Enumeration<
-      ['new', 'ending', 'permanent', 'ended']
-    > &
+    campaign_status: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'new'>;
+      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -710,6 +708,7 @@ export interface ApiMewRewardsCampaignMewRewardsCampaign
     publishedAt: Schema.Attribute.DateTime;
     reward_info: Schema.Attribute.Component<'rewards.reward-info', false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    status_badge: Schema.Attribute.Component<'rewards.campaign-status', false>;
     terms: Schema.Attribute.Component<'rewards.terms', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_rewards_campaign_statuses",
+  "info": {
+    "displayName": "CampaignStatus",
+    "description": "Status badge shown on campaign cards and detail hero (e.g. New, Ending soon); color maps to the badge color"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

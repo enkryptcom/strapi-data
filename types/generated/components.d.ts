@@ -11,6 +11,18 @@ export interface HtmlHtmLmeta extends Struct.ComponentSchema {
   };
 }
 
+export interface RewardsCampaignStatus extends Struct.ComponentSchema {
+  collectionName: 'components_rewards_campaign_statuses';
+  info: {
+    description: 'Status badge shown on campaign cards and detail hero (e.g. New, Ending soon); color maps to the badge color';
+    displayName: 'CampaignStatus';
+  };
+  attributes: {
+    color: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface RewardsCtaButton extends Struct.ComponentSchema {
   collectionName: 'components_rewards_cta_buttons';
   info: {
@@ -137,6 +149,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'html.htm-lmeta': HtmlHtmLmeta;
+      'rewards.campaign-status': RewardsCampaignStatus;
       'rewards.cta-button': RewardsCtaButton;
       'rewards.how-to-earn-step': RewardsHowToEarnStep;
       'rewards.link': RewardsLink;
