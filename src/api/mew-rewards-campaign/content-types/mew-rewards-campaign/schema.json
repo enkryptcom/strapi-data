@@ -30,15 +30,14 @@
       "required": true
     },
     "campaign_status": {
-      "type": "enumeration",
-      "enum": [
-        "new",
-        "ending",
-        "permanent",
-        "ended"
-      ],
-      "default": "new",
+      "type": "boolean",
+      "default": true,
       "required": true
+    },
+    "status_badge": {
+      "type": "component",
+      "repeatable": false,
+      "component": "rewards.campaign-status"
     },
     "products": {
       "type": "component",
